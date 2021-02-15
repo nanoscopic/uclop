@@ -19,7 +19,7 @@ func (self *Opt) String() string {
 }
 
 func (self *Opt) Int() int {
-    num, _ = strconv.Atoi( self.val )
+    num, _ := strconv.Atoi( self.val )
     return num 
 }
 
