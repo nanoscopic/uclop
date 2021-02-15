@@ -3,7 +3,7 @@ package mod
 import (
   "fmt"
   "os"
-}
+)
 
 type Opt struct {
     optType int
