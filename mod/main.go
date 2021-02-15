@@ -3,6 +3,7 @@ package mod
 import (
   "fmt"
   "os"
+  "strconv"
 )
 
 type Opt struct {
@@ -11,6 +12,22 @@ type Opt struct {
     name string
     descr string
     required bool
+}
+
+func (self *Opt) String() string {
+    return self.val
+}
+
+func (self *Opt) Int() int {
+    num, _ = strconv.Atoi( self.val )
+    return num 
+}
+
+func (self *Opt) Bool() bool {
+    if self.val == "true" {
+        return true
+    }
+    return false
 }
 
 func OPT( name string, descr string ) (*Opt) {
@@ -23,6 +40,12 @@ func OPT( name string, descr string ) (*Opt) {
 func OPT_REQ( name string, descr string ) (*Opt) {
     opt := OPT( name, descr )
     opt.required = true
+    return opt
+}
+
+func OPT_FLAG( name string, descr string ) (*Opt) {
+    opt := OPT( name, descr )
+    opt.optType = 2
     return opt
 }
 
