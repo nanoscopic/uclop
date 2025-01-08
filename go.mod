@@ -1,3 +1,3 @@
-module github.com/nanoscopic/uclop/v2
+module github.com/nanoscopic/uclop
 
 go 1.13
